@@ -30,7 +30,6 @@ Bundle 'bufexplorer.zip'
 Bundle 'DirDiff.vim'
 Bundle 'git://github.com/wesleyche/SrcExpl.git'
 Bundle 'SuperTab'
-Bundle 'SuperTab-continued.'
 Bundle 'cscope_macros.vim'
 Bundle 'gtags.vim'
 Bundle 'OmniCppComplete'
@@ -57,15 +56,34 @@ set ruler			" 화면 우측 하단에 현재 커서의 위치(줄,칸)를 보여
 set number			" 줄번호 출력
 set modifiable
 set hlsearch			" Highlight Search
+set ignorecase      " ignore case sensitive when searching
 set ts=4			" tab stop - tab 크기
 set sw=4			" shift width - shift 크기 조절
 set sts=4			" soft tab stop - tab 이동 크기
 set expandtab
 set incsearch
 set printoptions=portrait:n,wrap:n,duplex:off
+set encoding=utf8
 set fileencodings=utf-8,euc-kr
 set gfn=나눔고딕코딩\ 12	" gvim용 폰트 설정
 colorscheme desert
+set virtualedit=all
+
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"              | | | | |  |   |      |  |     |    |
+"              "              | | | | |  |   |      |  |     |    + current
+"              "              | | | | |  |   |      |  |     |       column
+"              "              | | | | |  |   |      |  |     +-- current line
+"              "              | | | | |  |   |      |  +-- current % into file
+"              "              | | | | |  |   |      +-- current syntax in
+"              "              | | | | |  |   |          square brackets
+"              "              | | | | |  |   +-- current fileformat
+"              "              | | | | |  +-- number of lines
+"              "              | | | | +-- preview flag in square brackets
+"              "              | | | +-- help flag in square brackets
+"              "              | | +-- readonly flag in square brackets
+"              "              | +-- rodified flag in square brackets
+"              "              +-- full path to file in the Buffer
 
 "==========================
 "= autocmd
