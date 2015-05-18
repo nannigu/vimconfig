@@ -95,6 +95,8 @@ autocmd BufEnter Makefile   setlocal ts=8 sw=8 sts=8 noexpandtab
 autocmd BufEnter .*         setlocal ts=8 sw=8 sts=8 noexpandtab nocindent
 autocmd BufEnter *.md       setlocal ts=8 sw=8 sts=8 noexpandtab nocindent
 autocmd BufEnter *.sh       setlocal ts=8 sw=8 sts=8 noexpandtab nocindent
+autocmd BufWritePre * :%s/\s\+$//e	" remove trailing whitespace
+
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
