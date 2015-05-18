@@ -18,7 +18,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 Bundle 'snipMate'
@@ -117,8 +117,11 @@ nmap <C-\><C-]> :GtagsCursor<CR>
 "====================================================
 "= 키맵핑
 "====================================================
-" <F3> 이전 정의로 이동 (SrcExpl 플러그인이 설정)
-" <F4> 다음 정의로 이동 (SrcExpl 플러그인이 설정)
+map <F1> :cs find g <C-R>=expand("<cword>") <CR><CR>
+map <F2> :cs find c <C-R>=expand("<cword>") <CR><CR>
+map <F3> :cs find s <C-R>=expand("<cword>") <CR><CR>
+" <F4> 이전 정의로 이동 (SrcExpl 플러그인이 설정)
+" <F5> 다음 정의로 이동 (SrcExpl 플러그인이 설정)
 map <F6> :BufExplorer<cr>
 map <F7> :NERDTreeToggle<CR>
 map <F8> :SrcExplToggle<CR>
@@ -136,9 +139,9 @@ nmap <s-l> <C-W>>
 
 "===== Vim 내에서 창 간 이동
 nmap <c-h> <c-w>h
-nmap <c-j> <c-w>j 
-nmap <c-k> <c-w>k 
-nmap <c-l> <c-w>l 
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
 
 "===== 버퍼간 이동
 map ,x :bn!<CR>	  " Switch to Next File Buffer
@@ -226,10 +229,10 @@ let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 " // Set "<F12>" key for updating the tags file artificially
 let g:SrcExpl_updateTagsKey = "<F12>"
 
-" // Set "<F3>" key for displaying the previous definition in the jump list
-let g:SrcExpl_prevDefKey = "<F3>"
-" // Set "<F4>" key for displaying the next definition in the jump list
-let g:SrcExpl_nextDefKey = "<F4>"
+" // Set "<F4>" key for displaying the previous definition in the jump list
+let g:SrcExpl_prevDefKey = "<F4>"
+" // Set "<F5>" key for displaying the next definition in the jump list
+let g:SrcExpl_nextDefKey = "<F5>"
 
 
 
@@ -276,7 +279,7 @@ function! LoadCscope()
   endif
 endfunction
 au BufEnter /* call LoadCscope()
- 
+
 "현재 디렉토리부터 root 디렉토리까지 tags를 찾는다.
 set tags=tags;/
 
