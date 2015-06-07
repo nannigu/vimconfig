@@ -67,6 +67,7 @@ set printoptions=portrait:n,wrap:n,duplex:off
 set encoding=utf8
 set fileencodings=utf-8,euc-kr
 set gfn=나눔고딕코딩\ 12	" gvim용 폰트 설정
+colorscheme desert
 set virtualedit=all
 
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
