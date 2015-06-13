@@ -1,7 +1,7 @@
 "주의: Source Explorer의 충돌을 피하기 위해서 SrcExpl_pluginList를 새로 작성
 
 "====================================================
-"= Bundle
+"= BBundle
 "====================================================
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
@@ -28,7 +28,8 @@ Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'DirDiff.vim'
-Bundle 'git://github.com/wesleyche/SrcExpl.git'
+Bundle 'https://github.com/wesleyche/SrcExpl.git'
+"Bundle 'git://github.com/wesleyche/SrcExpl.git'
 Bundle 'SuperTab'
 Bundle 'cscope_macros.vim'
 Bundle 'gtags.vim'
@@ -52,7 +53,7 @@ au BufRead,BufNewFile *.S		set ft=c
 "= 기본 설정
 "====================================================
 syntax on
-set cindent			"들여쓰기 설정
+"set cindent			"들여쓰기 설정
 set ruler			" 화면 우측 하단에 현재 커서의 위치(줄,칸)를 보여준다.
 set number			" 줄번호 출력
 set modifiable
@@ -144,6 +145,9 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
+nmap <c-0> <c-w>v
+nmap <c-9> <c-w>s
+
 "===== 버퍼간 이동
 map ,x :bn!<CR>	  " Switch to Next File Buffer
 map ,z :bp!<CR>	  " Switch to Previous File Buffer
@@ -159,6 +163,10 @@ map ,7 :b!7<CR>	  " Switch to File Buffer #7
 map ,8 :b!8<CR>	  " Switch to File Buffer #8
 map ,9 :b!9<CR>	  " Switch to File Buffer #9
 map ,0 :b!0<CR>	  " Switch to File Buffer #0
+
+"===== tabview
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 "===== gtags.vim
 nmap <C-n> :cn<CR>
