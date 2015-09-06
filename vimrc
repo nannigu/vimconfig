@@ -40,6 +40,7 @@ Bundle 'https://github.com/dhruvasagar/vim-table-mode.git'
 "주석해제: \<space>
 Bundle 'The-NERD-Commenter'
 Bundle 'AutoComplPop'
+Bundle 'ShowMarks'
 
 filetype plugin indent on     " required!
 
@@ -69,6 +70,7 @@ set fileencodings=utf-8,euc-kr
 set gfn=나눔고딕코딩\ 12	" gvim용 폰트 설정
 colorscheme desert
 set virtualedit=all
+set mouse=a
 
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 "              | | | | |  |   |      |  |     |    |
@@ -127,6 +129,9 @@ map <F6> :BufExplorer<cr>
 map <F7> :NERDTreeToggle<CR>
 map <F8> :SrcExplToggle<CR>
 map <F9> :TlistToggle<CR>
+map ,d :NERDTreeToggle<CR>
+map ,f :NERDTreeFind<CR>
+map ,b :BufExplorer<cr>
 
 "=====  PageUP PageDown
 map <PageUp> <C-U><C-U>
@@ -144,6 +149,7 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
+nmap <c-=> <c-w>=
 "===== 버퍼간 이동
 map ,x :bn!<CR>	  " Switch to Next File Buffer
 map ,z :bp!<CR>	  " Switch to Previous File Buffer
