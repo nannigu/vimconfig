@@ -70,6 +70,8 @@ set fileencodings=utf-8,euc-kr
 set gfn=나눔고딕코딩\ 12	" gvim용 폰트 설정
 colorscheme desert
 set virtualedit=all
+set mouse=a
+set backspace=indent,eol,start
 
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 "              | | | | |  |   |      |  |     |    |
@@ -128,6 +130,9 @@ map <F6> :BufExplorer<cr>
 map <F7> :NERDTreeToggle<CR>
 map <F8> :SrcExplToggle<CR>
 map <F9> :TlistToggle<CR>
+map ,d :NERDTreeToggle<CR>
+map ,f :NERDTreeFind<CR>
+map ,b :BufExplorer<cr>
 
 "=====  PageUP PageDown
 map <PageUp> <C-U><C-U>
