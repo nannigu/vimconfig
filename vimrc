@@ -41,6 +41,7 @@ Bundle 'https://github.com/dhruvasagar/vim-table-mode.git'
 "주석해제: \<space>
 Bundle 'The-NERD-Commenter'
 Bundle 'AutoComplPop'
+Bundle 'ShowMarks'
 
 filetype plugin indent on     " required!
 
