@@ -41,9 +41,9 @@ Bundle 'https://github.com/dhruvasagar/vim-table-mode.git'
 "주석해제: \<space>
 Bundle 'The-NERD-Commenter'
 Bundle 'AutoComplPop'
-Bundle 'ShowMarks'
+"Bundle 'ShowMarks'
 
-filetype plugin indent on     " required!
+"filetype plugin indent on     " required!
 
 "====================================================
 "= 어셈블리 파일을 C처럼 인식하여 주석을 달기 위한 트릭
@@ -54,7 +54,10 @@ au BufRead,BufNewFile *.S		set ft=c
 "= 기본 설정
 "====================================================
 syntax on
-"set cindent			"들여쓰기 설정
+set nocompatible
+set autoindent
+set cindent			"들여쓰기 설정
+set smartindent
 set ruler			" 화면 우측 하단에 현재 커서의 위치(줄,칸)를 보여준다.
 set number			" 줄번호 출력
 set modifiable
@@ -73,6 +76,11 @@ colorscheme desert
 set virtualedit=all
 set mouse=a
 set backspace=indent,eol,start
+
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 "              | | | | |  |   |      |  |     |    |
@@ -93,7 +101,7 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 "==========================
 "= autocmd
 "==========================
-autocmd BufEnter *.c        setlocal ts=8 sw=8 sts=8 noexpandtab
+"autocmd BufEnter *.c        setlocal ts=8 sw=8 sts=8 noexpandtab
 autocmd BufEnter *.S        setlocal ts=8 sw=8 sts=8 noexpandtab
 autocmd BufEnter *.py       setlocal ts=8 sw=8 sts=8 noexpandtab
 autocmd BufEnter Makefile   setlocal ts=8 sw=8 sts=8 noexpandtab
