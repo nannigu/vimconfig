@@ -32,6 +32,7 @@ Bundle 'https://github.com/wesleyche/SrcExpl.git'
 "Bundle 'git://github.com/wesleyche/SrcExpl.git'
 Bundle 'SuperTab'
 Bundle 'cscope_macros.vim'
+Bundle 'ronakg/quickr-cscope.vim'
 Bundle 'gtags.vim'
 Bundle 'OmniCppComplete'
 Bundle 'armasm'
@@ -304,8 +305,13 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
 "현재 디렉토리부터 root 디렉토리까지 tags를 찾는다.
 set tags=tags;/
+set tags+=/home/kyunghooh/gitClone/GENIVI/dlt-daemon/tags
+set tags+=/home/kyunghooh/gitClone/luna-service2/tags
+set tags+=/home/kyunghooh/gitClone/glib/tags
 
 
 "====================================================
