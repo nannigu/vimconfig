@@ -81,8 +81,9 @@ set backspace=indent,eol,start
 
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" nnoremap ,o :set cursorline! cursorcolumn!<CR>
+nnoremap ,l :set cursorline!<CR>
 
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 "              | | | | |  |   |      |  |     |    |
@@ -137,13 +138,18 @@ map <F2> :cs find c <C-R>=expand("<cword>") <CR><CR>
 map <F3> :cs find s <C-R>=expand("<cword>") <CR><CR>
 " <F4> 이전 정의로 이동 (SrcExpl 플러그인이 설정)
 " <F5> 다음 정의로 이동 (SrcExpl 플러그인이 설정)
-map <F6> :BufExplorer<cr>
-map <F7> :NERDTreeToggle<CR>
-map <F8> :SrcExplToggle<CR>
-map <F9> :TlistToggle<CR>
+map <F6> :SrcExplToggle<CR>
+map <F7> :TlistToggle<CR>
+map <F8> :cp<cr>
+map <F9> :cn<CR>
+
+map <F10> :!cd /data/mctm_build/hlos/mctm_proc/att-manager&& ./updateTag.sh<CR>
+" <F11> Full screen (Terminal program own)
+" <F12> update srcExpl db(SrcExpl 플러그인이 설정)
 map ,d :NERDTreeToggle<CR>
 map ,f :NERDTreeFind<CR>
 map ,b :BufExplorer<cr>
+map ,c :copen<cr>
 
 "=====  PageUP PageDown
 map <PageUp> <C-U><C-U>
@@ -189,8 +195,6 @@ nmap <C-n> :cn<CR>
 nmap <C-p> :cp<CR>
 nmap <C-\><C-]> :GtagsCursor<CR>
 
-
-
 "===== make
 let startdir = getcwd()
 func! Make()
@@ -224,7 +228,7 @@ nmap ,ma :call Man()<cr><cr>
 "====================================================
 
 " // Set the height of Source Explorer window
-let g:SrcExpl_winHeight = 8
+let g:SrcExpl_winHeight = 10
 " // Set 100 ms for refreshing the Source Explorer
 let g:SrcExpl_refreshTime = 100
 " // Set "Enter" key to jump into the exact definition context
@@ -285,7 +289,7 @@ endif
 "====================================================
 let NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
-
+let NERDTreeQuitOnOpen=1
 
 
 "====================================================
@@ -308,10 +312,13 @@ au BufEnter /* call LoadCscope()
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 "현재 디렉토리부터 root 디렉토리까지 tags를 찾는다.
-set tags=tags;/
-set tags+=/home/kyunghooh/gitClone/GENIVI/dlt-daemon/tags
-set tags+=/home/kyunghooh/gitClone/luna-service2/tags
-set tags+=/home/kyunghooh/gitClone/glib/tags
+set tags=./tags,tags;$HOME/
+"set tags+=/data/mctm_build/hlos/apps_proc/poky/build/tmp-glibc/work/aarch64-poky-linux/dlt-daemon/2.15.0-r0/git/src/tags
+set tags+=/data/gitClone/genivi/dlt-daemon/tags
+set tags+=/data/gitClone/luna-service2/tags
+set tags+=/data/gitClone/glib/tags
+set tags+=/data/gitClone/mctm/persistence-client-library/tags
+set tags+=/data/gitClone/mctm/node-state-manager/tags
 
 
 "====================================================
