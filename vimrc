@@ -138,12 +138,15 @@ map <F2> :cs find c <C-R>=expand("<cword>") <CR><CR>
 map <F3> :cs find s <C-R>=expand("<cword>") <CR><CR>
 " <F4> 이전 정의로 이동 (SrcExpl 플러그인이 설정)
 " <F5> 다음 정의로 이동 (SrcExpl 플러그인이 설정)
-map <F6> :SrcExplToggle<CR>
-map <F7> :TlistToggle<CR>
-map <F8> :cp<cr>
-map <F9> :cn<CR>
+map <F6> :BufExplorer<cr>
+map <F7> :NERDTreeToggle<CR>
+map <F8> :SrcExplToggle<CR>
+map <F9> :TlistToggle<CR>
 
-map <F10> :!cd /data/mctm_build/hlos/mctm_proc/att-manager&& ./updateTag.sh<CR>
+map <F10> :cp<cr>
+map <F11> :cn<CR>
+
+"map <F10> :!cd /data/mctm_build/hlos/mctm_proc/att-manager&& ./updateTag.sh<CR>
 " <F11> Full screen (Terminal program own)
 " <F12> update srcExpl db(SrcExpl 플러그인이 설정)
 map ,d :NERDTreeToggle<CR>
@@ -166,6 +169,11 @@ nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
+
+nmap <m-h> <c-w>h
+nmap <m-j> <c-w>j
+nmap <m-k> <c-w>k
+nmap <m-l> <c-w>l
 
 nmap <c-0> <c-w>v
 nmap <c-9> <c-w>s
@@ -313,12 +321,8 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 "현재 디렉토리부터 root 디렉토리까지 tags를 찾는다.
 set tags=./tags,tags;$HOME/
-"set tags+=/data/mctm_build/hlos/apps_proc/poky/build/tmp-glibc/work/aarch64-poky-linux/dlt-daemon/2.15.0-r0/git/src/tags
-set tags+=/data/gitClone/genivi/dlt-daemon/tags
-set tags+=/data/gitClone/luna-service2/tags
-set tags+=/data/gitClone/glib/tags
-set tags+=/data/gitClone/mctm/persistence-client-library/tags
-set tags+=/data/gitClone/mctm/node-state-manager/tags
+set tags+=/home/byungju.ko/work/geely/geely_sw_test/tags
+set tags+=/home/byungju.ko/work/geely/build_geely/tags
 
 
 "====================================================
