@@ -136,6 +136,7 @@ nmap <C-\><C-]> :GtagsCursor<CR>
 map <F1> :cs find g <C-R>=expand("<cword>") <CR><CR>
 map <F2> :cs find c <C-R>=expand("<cword>") <CR><CR>
 map <F3> :cs find s <C-R>=expand("<cword>") <CR><CR>
+map <F4> :cs find f <C-R>=expand("<cword>") <CR><CR>
 " <F4> 이전 정의로 이동 (SrcExpl 플러그인이 설정)
 " <F5> 다음 정의로 이동 (SrcExpl 플러그인이 설정)
 map <F6> :BufExplorer<cr>
@@ -153,6 +154,10 @@ map ,d :NERDTreeToggle<CR>
 map ,f :NERDTreeFind<CR>
 map ,b :BufExplorer<cr>
 map ,c :copen<cr>
+
+" 현재 열린 파일의 경로로 shell을 연다
+map ,` :cd %:p:h<CR>:sh<CR>
+command CDC cd %:p:h
 
 "=====  PageUP PageDown
 map <PageUp> <C-U><C-U>
